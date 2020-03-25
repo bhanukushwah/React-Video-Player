@@ -4,7 +4,10 @@ import YTSearch from 'youtube-api-search';
 import SearchBar from './components/search_bar';
 import VideoList from './components/video_list';
 import VideoDetails from './components/video_details';
-const API_KEY = 'AIzaSyCiDZvcLBPtj70s98qPBj4BgOLDhX-_qPY';
+import _ from 'lodash';
+import FooterApp from './components/footer'
+
+const API_KEY = 'Enter Your API KEY here';
 
 class App extends Component {
     constructor(props){
@@ -26,13 +29,15 @@ class App extends Component {
     }
 
     render () {
+        const  videoSearch = _.debounce((term) => {this.videoSearch(term)}, 500);
         return (
             <div>
-                <SearchBar onSearchTermChange = {term => this.videoSearch(term)}/>
+                <SearchBar onSearchTermChange = {videoSearch}/>
                 <VideoDetails video = {this.state.selectedVideo}/>
                 <VideoList 
                 onVideoSelect = {selectedVideo => this.setState({selectedVideo})}
                 videos={this.state.videos}/>
+                <FooterApp />
             </div>
         );
     }

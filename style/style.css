@@ -1,10 +1,17 @@
+@import url('https://fonts.googleapis.com/css?family=Nunito+Sans&display=swap');
+
+body{
+    background-color: #222f3e !important;
+    color: #fff !important;
+    font-family: 'Nunito Sans', sans-serif;
+}
 .search-bar {
     margin: 20px;
     text-align: center;
 }
 
 .search-bar input{
-    width: 75%;
+    width: 100%;
 }
 
 .video-item img {
@@ -20,8 +27,27 @@
 
 .list-group-item{
     cursor: pointer;
+    background-color: #222f3e !important;
+    color: #fff !important;
 }
 
 .list-group-item:hover{
-    background-color: #eee;
+    background-color: #3b5169 !important;
+    color: #fff !important;
+}
+.footer{
+    text-align: center;
+    color: white;
+    padding: 3rem;
+}
+.footer a{
+    color:#fff;
+}
+@media(max-device-width: 768px) {
+    .col-md-4, .col-md-8 {
+        padding-left: 0% !important;
+        padding-right: 0% !important;
+    }
+
+
 }

@@ -9,6 +9,7 @@ class SearchBar extends Component {
     render(){
         return (
             <div className="search-bar">
+                <img src="../../assets/youtube.svg" width="100px"/>
                 <input value={this.state.term}
                 onChange={event => this.onInputChange(event.target.value)}
                 />
